@@ -1,0 +1,154 @@
+//Weather Station
+String localStationId "ID [%s]" { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:station#id" }
+String localStationName "Név [%s]" { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:station#name" }
+Location localStationLocation "Pozíció [%2$s°N %3$s°E]" <location> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:station#location" }
+
+//Current Weather
+//DateTime localLastMeasurement "Lekérdezés ideje: [%1$tY-%1$tm-%1$tdT%1$tH:%1$tM:%1$tS]" <time> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:current#time-stamp" }
+DateTime localLastMeasurement "Lekérdezés ideje: [%1$tY-%1$tm-%1$ta]" <time> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:current#time-stamp" }
+String localCurrentCondition "Jelenleg [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:current#condition" }
+Image localCurrentConditionIcon "Icon" { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:current#icon" }
+Number:Temperature localCurrentTemperature "Hőmérséklet [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:current#temperature" }
+Number:Temperature localCurrentApparentTemperature "Érezhető hőmérséklet [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:current#apparent-temperature" }
+Number:Pressure localCurrentPressure "Légnyomás [%.1f %unit%]" <pressure> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:current#pressure" }
+Number:Dimensionless localCurrentHumidity "Páratartalom [%d %unit%]" <humidity> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:current#humidity" }
+Number:Speed localCurrentWindSpeed "Szélsebesség [%.1f km/h]" <wind> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:current#wind-speed" }
+Number:Angle localCurrentWindDirection "Szélirány [%d %unit%]" <wind> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:current#wind-direction" }
+Number:Dimensionless localCurrentCloudiness "Felhősség [%d %unit%]" <clouds> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:current#cloudiness" }
+Number:Length localCurrentRainVolume "Eső [%.1f %unit%]" <rain> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:current#rain" }
+Number:Length localCurrentSnowVolume "Hó [%.1f %unit%]" <snow> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:current#snow" }
+Number:Length localCurrentVisibility "Látótávolság [%.1f km]" <visibility> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:current#visibility" }
+
+//
+//DateTime localDailyForecastTodayTimestamp "Lekérdezés ideje [%1$tY-%1$tm-%1$td]" <time> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastToday#time-stamp" }
+DateTime localDailyForecastTodayTimestamp "Lekérdezés ideje [%1$tY-%1$tm-%1$ta]" <time> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastToday#time-stamp" }
+String localDailyForecastTodayCondition "Előrejelzés mára [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastToday#condition" }
+Image localDailyForecastTodayConditionIcon "Icon" { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastToday#icon" }
+Number:Temperature localDailyForecastTodayMinTemperature "Minimum hőmérséklet [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastToday#min-temperature" }
+Number:Temperature localDailyForecastTodayMaxTemperature "Maximum hőmérséklet for today [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastToday#max-temperature" }
+Number:Pressure localDailyForecastTodayPressure "Légnyomás [%.1f %unit%]" <pressure> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastToday#pressure" }
+Number:Dimensionless localDailyForecastTodayHumidity "Páratartalom [%d %unit%]" <humidity> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastToday#humidity" }
+Number:Speed localDailyForecastTodayWindSpeed "Szélsebesség[%.1f km/h]" <wind> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastToday#wind-speed" }
+Number:Angle localDailyForecastTodayWindDirection "Szélirány [%d %unit%]" <wind> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastToday#wind-direction" }
+Number:Dimensionless localDailyForecastTodayCloudiness "Felhősség [%d %unit%]" <clouds> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastToday#cloudiness" }
+Number:Length localDailyForecastTodayRainVolume "Eső [%.1f %unit%]" <rain> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastToday#rain" }
+Number:Length localDailyForecastTodaySnowVolume "Hó [%.1f %unit%]" <snow> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastToday#snow" }
+
+//DateTime localDailyForecastTomorrowTimestamp "Lekérdezés ideje [%1$tY-%1$tm-%1$td]" <time> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastTomorrow#time-stamp" }
+DateTime localDailyForecastTomorrowTimestamp "Lekérdezés ideje [%1$tY-%1$tm-%1$ta]" <time> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastTomorrow#time-stamp" }
+String localDailyForecastTomorrowCondition "Előrejelzés holnapra [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastTomorrow#condition" }
+Image localDailyForecastTomorrowConditionIcon "Icon" { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastTomorrow#icon" }
+Number:Temperature localDailyForecastTomorrowMinTemperature "Minimum hőmérséklet [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastTomorrow#min-temperature" }
+Number:Temperature localDailyForecastTomorrowMaxTemperature "Maximum hőmérséklet [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastTomorrow#max-temperature" }
+
+//DateTime localDailyForecastDay2Timestamp "Lekérdezés ideje [%1$tR %1$ta]" <time> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastDay2#time-stamp" }
+DateTime localDailyForecastDay2Timestamp "Lekérdezés ideje [%1$tY-%1$tm-%1$ta]" <time> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastDay2#time-stamp" }
+String localDailyForecastDay2Condition "Előrejelzés a következő 2 napra [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastDay2#condition" }
+Image localDailyForecastDay2ConditionIcon "Icon" { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastDay2#icon" }
+Number:Temperature localDailyForecastDay2MinTemperature "Minimu hőmérséklet [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastDay2#min-temperature" }
+Number:Temperature localDailyForecastDay2MaxTemperature "Maximum hőmérséklet [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastDay2#max-temperature" }
+
+String miamiCurrentCondition "Budaörs jelenleg [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:current#condition" }
+Image miamiCurrentConditionIcon "Icon" { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:current#icon" }
+Number:Temperature miamiCurrentTemperature "Hőmérséklet Budaörsön [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:current#temperature" }
+
+//3 Hours Forecast 
+DateTime localHourlyForecast03Timestamp "Lekérdezés ideje [%1$tY-%1$tm-%1$ta]" <time> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours03#time-stamp" }
+String localHourlyForecast03Condition "Budaörs a következő 3 órában [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours03#condition" }
+Image localHourlyForecast03ConditionIcon "Icon" { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours03#icon" }
+Number:Temperature localHourlyForecast03Temperature "Hőmérséklet a köv. 3 órában [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours03#temperature" }
+Number:Temperature localHourlyForecast03MinTemperature "Minimum hőmérséklet [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours03#min-temperature" }
+Number:Temperature localHourlyForecast03MaxTemperature "Maximum hőmérséklet [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours03#max-temperature" }
+Number:Temperature localHourlyForecast03ApparentTemperature "Apparent hőmérséklet [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours03#apparent-temperature" }
+Number:Pressure localHourlyyForecast03Pressure "Várható Légnyomás [%.1f %unit%]" <pressure> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours03#pressure" }
+Number:Dimensionless localHourlyForecast03Humidity "Várható Páratartalom [%d %unit%]" <humidity> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours03#humidity" }
+Number:Speed localHourlyForecast03WindSpeed "Várható Szélsebesség[%.1f km/h]" <wind> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours03#wind-speed" }
+Number:Angle localHourlyForecast03WindDirection "Várható Szélirány [%d %unit%]" <wind> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours03#wind-direction" }
+Number:Dimensionless localHourlyForecast03Cloudiness "Vűrható Felhősség [%d %unit%]" <clouds> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours03#cloudiness" }
+Number:Length localHourlyForecast03RainVolume "Várható Eső [%.1f %unit%]" <rain> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours03#rain" }
+Number:Length localHourlyForecast03SnowVolume "Várható Hó [%.1f %unit%]" <snow> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours03#snow" }
+
+//6 Hours Forecast 
+DateTime localHourlyForecast06Timestamp "Lekérdezés ideje [%1$tY-%1$tm-%1$ta]" <time> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours06#time-stamp" }
+String localHourlyForecast06Condition "Budaörs a következő 3 órában [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours06#condition" }
+Image localHourlyForecast06ConditionIcon "Icon" { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours06#icon" }
+Number:Temperature localHourlyForecast06Temperature "Hőmérséklet a köv. 3 órában [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours06#temperature" }
+Number:Temperature localHourlyForecast06MinTemperature "Minimum hőmérséklet [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours06#min-temperature" }
+Number:Temperature localHourlyForecast06MaxTemperature "Maximum hőmérséklet [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours06#max-temperature" }
+Number:Temperature localHourlyForecast06ApparentTemperature "Apparent hőmérséklet [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours06#apparent-temperature" }
+Number:Pressure localHourlyyForecast06Pressure "Várható Légnyomás [%.1f %unit%]" <pressure> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours06#pressure" }
+Number:Dimensionless localHourlyForecast06Humidity "Várható Páratartalom [%d %unit%]" <humidity> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours06#humidity" }
+Number:Speed localHourlyForecast06WindSpeed "Várható Szélsebesség[%.1f km/h]" <wind> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours06#wind-speed" }
+Number:Angle localHourlyForecast06WindDirection "Várható Szélirány [%d %unit%]" <wind> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours06#wind-direction" }
+Number:Dimensionless localHourlyForecast06Cloudiness "Vűrható Felhősség [%d %unit%]" <clouds> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours06#cloudiness" }
+Number:Length localHourlyForecast06RainVolume "Várható Eső [%.1f %unit%]" <rain> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours06#rain" }
+Number:Length localHourlyForecast06SnowVolume "Várható Hó [%.1f %unit%]" <snow> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours06#snow" }
+
+//9 Hours Forecast 
+DateTime localHourlyForecast09Timestamp "Lekérdezés ideje [%1$tY-%1$tm-%1$ta]" <time> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours09#time-stamp" }
+String localHourlyForecast09Condition "Budaörs a következő 3 órában [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours09#condition" }
+Image localHourlyForecast09ConditionIcon "Icon" { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours09#icon" }
+Number:Temperature localHourlyForecast09Temperature "Hőmérséklet a köv. 3 órában [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours09#temperature" }
+Number:Temperature localHourlyForecast09MinTemperature "Minimum hőmérséklet [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours09#min-temperature" }
+Number:Temperature localHourlyForecast09MaxTemperature "Maximum hőmérséklet [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours09#max-temperature" }
+Number:Temperature localHourlyForecast09ApparentTemperature "Apparent hőmérséklet [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours09#apparent-temperature" }
+Number:Pressure localHourlyyForecast09Pressure "Várható Légnyomás [%.1f %unit%]" <pressure> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours09#pressure" }
+Number:Dimensionless localHourlyForecast09Humidity "Várható Páratartalom [%d %unit%]" <humidity> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours09#humidity" }
+Number:Speed localHourlyForecast09WindSpeed "Várható Szélsebesség[%.1f km/h]" <wind> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours09#wind-speed" }
+Number:Angle localHourlyForecast09WindDirection "Várható Szélirány [%d %unit%]" <wind> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours09#wind-direction" }
+Number:Dimensionless localHourlyForecast09Cloudiness "Vűrható Felhősség [%d %unit%]" <clouds> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours09#cloudiness" }
+Number:Length localHourlyForecast09RainVolume "Várható Eső [%.1f %unit%]" <rain> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours09#rain" }
+Number:Length localHourlyForecast09SnowVolume "Várható Hó [%.1f %unit%]" <snow> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours09#snow" }
+
+//12 Hours Forecast 
+DateTime localHourlyForecast12Timestamp "Lekérdezés ideje [%1$tY-%1$tm-%1$ta]" <time> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours12#time-stamp" }
+String localHourlyForecast12Condition "Budaörs a következő 3 órában [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours12#condition" }
+Image localHourlyForecast12ConditionIcon "Icon" { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours12#icon" }
+Number:Temperature localHourlyForecast12Temperature "Hőmérséklet a köv. 3 órában [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours12#temperature" }
+Number:Temperature localHourlyForecast12MinTemperature "Minimum hőmérséklet [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours12#min-temperature" }
+Number:Temperature localHourlyForecast12MaxTemperature "Maximum hőmérséklet [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours12#max-temperature" }
+Number:Temperature localHourlyForecast12ApparentTemperature "Apparent hőmérséklet [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours12#apparent-temperature" }
+Number:Pressure localHourlyyForecast12Pressure "Várható Légnyomás [%.1f %unit%]" <pressure> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours12#pressure" }
+Number:Dimensionless localHourlyForecast12Humidity "Várható Páratartalom [%d %unit%]" <humidity> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours12#humidity" }
+Number:Speed localHourlyForecast12WindSpeed "Várható Szélsebesség[%.1f km/h]" <wind> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours12#wind-speed" }
+Number:Angle localHourlyForecast12WindDirection "Várható Szélirány [%d %unit%]" <wind> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours12#wind-direction" }
+Number:Dimensionless localHourlyForecast12Cloudiness "Vűrható Felhősség [%d %unit%]" <clouds> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours12#cloudiness" }
+Number:Length localHourlyForecast12RainVolume "Várható Eső [%.1f %unit%]" <rain> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours12#rain" }
+Number:Length localHourlyForecast12SnowVolume "Várható Hó [%.1f %unit%]" <snow> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours12#snow" }
+
+//15 Hours Forecast 
+
+
+//18 Hours Forecast 
+
+
+//21 Hours Forecast 
+
+
+//24 Hours Forecast 
+DateTime localHourlyForecast24Timestamp "Lekérdezés ideje [%1$tY-%1$tm-%1$ta]" <time> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours24#time-stamp" }
+String localHourlyForecast24Condition "Budaörs a következő 3 órában [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours24#condition" }
+Image localHourlyForecast24ConditionIcon "Icon" { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours24#icon" }
+Number:Temperature localHourlyForecast24Temperature "Hőmérséklet a köv. 3 órában [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours24#temperature" }
+Number:Temperature localHourlyForecast24MinTemperature "Minimum hőmérséklet [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours24#min-temperature" }
+Number:Temperature localHourlyForecast24MaxTemperature "Maximum hőmérséklet [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours24#max-temperature" }
+Number:Temperature localHourlyForecast24ApparentTemperature "Apparent hőmérséklet [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours24#apparent-temperature" }
+Number:Pressure localHourlyyForecast24Pressure "Várható Légnyomás [%.1f %unit%]" <pressure> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours24#pressure" }
+Number:Dimensionless localHourlyForecast24Humidity "Várható Páratartalom [%d %unit%]" <humidity> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours24#humidity" }
+Number:Speed localHourlyForecast24WindSpeed "Várható Szélsebesség[%.1f km/h]" <wind> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours24#wind-speed" }
+Number:Angle localHourlyForecast24WindDirection "Várható Szélirány [%d %unit%]" <wind> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours24#wind-direction" }
+Number:Dimensionless localHourlyForecast24Cloudiness "Vűrható Felhősség [%d %unit%]" <clouds> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours24#cloudiness" }
+Number:Length localHourlyForecast24RainVolume "Várható Eső [%.1f %unit%]" <rain> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours24#rain" }
+Number:Length localHourlyForecast24SnowVolume "Várható Hó [%.1f %unit%]" <snow> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours24#snow" }
+
+
+
+//String miamiHourlyForecast06Condition "Előrejelzés a köv. 3-6 órára [%s]" <sun_clouds> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours06#condition" }
+//Image miamiHourlyForecast06ConditionIcon "Icon" { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours06#icon" }
+//Number:Temperature miamiHourlyForecast06Temperature "Hőmérséklet a köv. 3-6 órára [%.1f %unit%]" <temperature> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastHours06#temperature" }
+
+DateTime localCurrentUVIndexTimestamp "Lekérdezés ideje [%1$tY-%1$tm-%1$td]" <time> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:current#time-stamp" }
+Number localCurrentUVIndex "Jelenlegi UV Index [%d]" { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:current#uvindex" }
+
+DateTime localForecastTomorrowUVIndexTimestamp "Lekérdezés ideje [%1$tY-%1$tm-%1$td]" <time> { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastTomorrow#time-stamp" }
+Number localForecastTomorrowUVIndex "UV Index holnapra [%d]" { channel="openweathermap:weather-and-forecast:6f9a3a4f:otthon:forecastTomorrow#uvindex" }
